@@ -29,7 +29,6 @@ public class Chandrayaan3 {
     
     
     public void moveForward() {
-    	
         switch (direction) {
             case NORTH :
             case SOUTH:
@@ -43,11 +42,26 @@ public class Chandrayaan3 {
             case DOWN:
                 z++;
                 break;
-          
-        }
-        
-        
+        }  
     }
+    
+    public void moveBackward() {
+        switch (direction) {
+            case NORTH :
+            case SOUTH:
+                y--;
+                break;
+            case EAST:
+            case WEST:
+                x--;
+                break;
+            case UP:
+            case DOWN:
+                z--;
+                break;
+        }  
+    }
+
     
     public void moveRight() {
         switch (direction) {
@@ -63,8 +77,13 @@ public class Chandrayaan3 {
             case WEST:
                 direction = Direction.NORTH;
                 break;
+            case UP:
+            	direction = Direction.EAST;
+            	break;
+            case DOWN:
+            	direction = Direction.WEST;
+            	break;
             default:
-                // Up and Down directions don't change when moving right
                 break;
         }
     }
@@ -76,13 +95,55 @@ public class Chandrayaan3 {
             case SOUTH:
             case EAST:
             case WEST:
+            case DOWN:
                 direction = Direction.UP;
                 break;
             default:
-                // Up and Down directions are already facing up or down
+                
                 break;
         }
     }
+    
+    public void moveDown() {
+        switch (direction) {
+            case NORTH:
+            case SOUTH:
+            case EAST:
+            case WEST:
+            case UP:
+                direction = Direction.DOWN;
+                break;
+            default:
+                
+                break;
+        }
+    }
+    
+    public void moveLeft() {
+        switch (direction) {
+            case NORTH:
+                direction = Direction.WEST;
+                break;
+            case WEST:
+                direction = Direction.SOUTH;
+                break;
+            case SOUTH:
+                direction = Direction.EAST;
+                break;
+            case EAST:
+                direction = Direction.NORTH;
+                break;
+            case UP:
+            	direction = Direction.WEST;
+            	break;
+            case DOWN:
+            	direction = Direction.EAST;
+            	break;
+            default:
+                break;
+        }
+    }
+
 
 
 

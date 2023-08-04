@@ -46,5 +46,41 @@ public class Chandrayaan3Test {
 	    assertEquals(0, spacecraft.getZ());
 	    assertEquals(Direction.UP,spacecraft.getDirection());
 	}
+	
+	@Test 
+	public void testMoveBackward() {
+		Chandrayaan3 spacecraft = new Chandrayaan3(0, 1, 0, Direction.UP);
+	    spacecraft.moveBackward();
+	    
+	    assertEquals(0, spacecraft.getX());
+	    assertEquals(1, spacecraft.getY());
+	    assertEquals(-1, spacecraft.getZ());
+	    assertEquals(Direction.UP,spacecraft.getDirection());
+	}
+	
+	
+	@Test 
+	public void testMoveLeft() {
+		Chandrayaan3 spacecraft = new Chandrayaan3(0, 1, -1, Direction.UP);
+	    spacecraft.moveLeft();
+	    
+	    assertEquals(0, spacecraft.getX());
+	    assertEquals(1, spacecraft.getY());
+	    assertEquals(-1, spacecraft.getZ());
+	    assertEquals(Direction.WEST,spacecraft.getDirection());
+	}
+	
+	
+	@Test 
+	public void testMoveDown() {
+		Chandrayaan3 spacecraft = new Chandrayaan3(0, 1, -1, Direction.UP);
+	    spacecraft.moveDown();
+	    
+	    assertEquals(0, spacecraft.getX());
+	    assertEquals(1, spacecraft.getY());
+	    assertEquals(-1, spacecraft.getZ());
+	    assertEquals(Direction.DOWN,spacecraft.getDirection());
+
+	}
 
 }
